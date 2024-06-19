@@ -1,0 +1,104 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(pink, rgb(0, 183, 255));
+}
+
+#quiz {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: azure;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(249, 247, 247, 0.591);
+}
+
+#question {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.question-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#answer-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: rgb(174, 130, 215);
+    color: rgb(139, 227, 232);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: rgb(252, 196, 128);
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#controls .hide {
+    display: none;
+}
+
+#start-btn, #next-btn, #restart-btn {
+    padding: 10px 20px;
+    background-color: rgb(136, 248, 110);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+#start-btn:hover, #next-btn:hover, #restart-btn:hover {
+    background-color: aquamarine;
+}
+
+.correct {
+    background-color: rgb(197, 251, 116);
+    color: white;
+}
+
+.wrong {
+    background-color: rgb(251, 125, 116);
+    color: white;
+}
+
+.multiple-choice.selected {
+    background-color: #cce5ff;
+    border-color: #b8daff;
+}
+
+#submit-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50; /* Зеленый цвет фона */
+    color: white; /* Белый цвет текста */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
