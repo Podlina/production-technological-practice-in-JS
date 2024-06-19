@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById('start-btn');
     const nextButton = document.getElementById('next-btn');
-    const submitButton = document.createElement('button');
-    submitButton.id = 'submit-btn';
-    submitButton.classList.add('hide');
-    submitButton.innerText = 'Submit';
-    document.body.appendChild(submitButton);
+    const checkButton = document.getElementById('check-btn');
+    const questionCounterElement = document.getElementById('question-counter');
+    const resultsElement = document.getElementById('results');
 
     const questionContainerElement = document.getElementById('question-container');
     const questionElement = document.getElementById('question');
@@ -13,23 +11,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let shuffledQuestions, currentQuestionIndex, score = 0;
 
-    nextButton.classList.add('hide');
-
     startButton.addEventListener('click', startGame);
-    submitButton.classList.add('hide'); 
 
     function startGame() {
         startButton.classList.add('hide');
-        shuffledQuestions = questions.sort(() => Math.random() - 0.5);
+        questionCounterElement.classList.remove('hide');
+        questionContainerElement.classList.remove('hide');
+        resultsElement.classList.add('hide');
+        shuffledQuestions = getRandomQuestions(questions, 10);
         currentQuestionIndex = 0;
         score = 0;
-        questionContainerElement.classList.remove('hide');
         setNextQuestion();
+    }
+
+    function getRandomQuestions(questions, count) {
+        const shuffled = questions.sort(() => Math.random() - 0.5);
+        return shuffled.slice(0, Math.min(count, questions.length));
     }
 
     function setNextQuestion() {
         resetState();
-        showQuestion(shuffledQuestions[currentQuestionIndex]);
+        if (currentQuestionIndex < shuffledQuestions.length) {
+            showQuestion(shuffledQuestions[currentQuestionIndex]);
+            updateQuestionCounter();
+        } else {
+            concludeQuiz();
+        }
     }
 
     function showQuestion(question) {
@@ -53,15 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (question.multiple) {
-            submitButton.classList.remove('hide');
+            checkButton.classList.remove('hide');
         } else {
-            submitButton.classList.add('hide');
+            checkButton.classList.add('hide');
         }
     }
 
     function resetState() {
         nextButton.classList.add('hide');
-        submitButton.classList.add('hide');
+        checkButton.classList.add('hide');
         while (answerButtonsElement.firstChild) {
             answerButtonsElement.removeChild(answerButtonsElement.firstChild);
         }
@@ -87,17 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.classList.remove('hide');
     }
 
-    submitButton.addEventListener('click', () => {
+    checkButton.addEventListener('click', () => {
         handleMultipleChoiceAnswer();
     });
 
     nextButton.addEventListener('click', () => {
         currentQuestionIndex++;
-        if (currentQuestionIndex < shuffledQuestions.length) {
-            setNextQuestion();
-        } else {
-            concludeQuiz();
-        }
+        setNextQuestion();
     });
 
     function handleMultipleChoiceAnswer() {
@@ -119,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const correct = correctAnswersCount === selectedButtons.length && selectedButtons.length === allButtons.filter(button => button.dataset.correct === 'true').length;
 
         if (correct) score++;
-        submitButton.classList.add('hide');
+        checkButton.classList.add('hide');
         nextButton.classList.remove('hide');
     }
 
@@ -138,21 +141,25 @@ document.addEventListener('DOMContentLoaded', () => {
         element.classList.remove('selected');
     }
 
+    function updateQuestionCounter() {
+        questionCounterElement.innerText = `Question ${currentQuestionIndex + 1} out of ${shuffledQuestions.length}`;
+    }
+
     function concludeQuiz() {
         questionContainerElement.classList.add('hide');
         nextButton.classList.add('hide');
-        submitButton.classList.add('hide'); 
-        const resultsElement = document.createElement('div');
-        resultsElement.classList.add('results');
+        checkButton.classList.add('hide');
+        questionCounterElement.classList.add('hide');
+        resultsElement.classList.remove('hide');
         resultsElement.innerHTML = `
             <h2>Quiz Completed!</h2>
             <p>Your score: ${score} out of ${shuffledQuestions.length}</p>
             <button id="restart-btn">Restart Quiz</button>
         `;
-        document.body.appendChild(resultsElement);
         document.getElementById('restart-btn').addEventListener('click', () => {
-            resultsElement.remove();
+            resultsElement.classList.add('hide');
             startGame();
         });
+        questionElement.innerText = ''; 
     }
 });

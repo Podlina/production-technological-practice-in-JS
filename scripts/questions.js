@@ -339,9 +339,9 @@ const questions = [
     {
         question: 'Choose Russian classics: (several possible answers)',
         answers: [
-            { text: 'Anton Pavlovich Chekhov', correct: false },
-            { text: 'Erich-Maria Remarque', correct: true },
-            { text: 'Fyodor Mikhailovich Dostoevsky', correct: false },
+            { text: 'Anton Pavlovich Chekhov', correct: true },
+            { text: 'Erich-Maria Remarque', correct: false },
+            { text: 'Fyodor Mikhailovich Dostoevsky', correct: true },
             { text: 'Nikolai Vasilyevich Gogol', correct: true },
         ],
         multiple: true
