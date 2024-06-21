@@ -217,7 +217,8 @@ const questions = [
 
     {
         question: 'Which country does this flag belong to?',
-        image: 'style/for_ques23.webp',
+        alt: 'An image of a building for the question "Which country does this flag belong to"',
+        image: 'images/for_ques23.webp',
         answers: [
             { text: 'Nepal', correct: false },
             { text: 'Uganda', correct: true },
@@ -228,7 +229,8 @@ const questions = [
 
     {
         question: 'What is the name of this building?',
-        image: 'style/for_ques24.jpg',
+        alt: 'An image of a building for the question "What is the name of this building?"',
+        image: 'images/for_ques24.jpg',
         answers: [
             { text: 'The Resurrection Gate', correct: false },
             { text: 'The Arc de Triomphe in Paris', correct: false },
@@ -293,7 +295,8 @@ const questions = [
 
     {
         question: 'What is the name of this animal? (several possible answers)',
-        image: 'style/for_ques30.jpg',
+        alt: 'An image of a building for the question "What is the name of this animal?"',
+        image: 'images/for_ques30.jpg',
         answers: [
             { text: 'Puma', correct: true },
             { text: 'Leo', correct: false },

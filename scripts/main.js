@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (question.image) {
             const imageElement = document.createElement('img');
             imageElement.src = question.image;
+            imageElement.alt = question.alt || 'Question image'; 
             imageElement.classList.add('question-image');
             questionElement.appendChild(imageElement);
         }
