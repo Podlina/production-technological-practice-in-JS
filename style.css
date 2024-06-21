@@ -95,8 +95,8 @@ body {
 #check-btn {
     padding: 10px 20px;
     margin-top: 20px;
-    background-color: #4CAF50; /* Зеленый цвет фона */
-    color: white; /* Белый цвет текста */
+    background-color: #4CAF50; 
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
