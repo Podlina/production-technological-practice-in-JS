@@ -218,7 +218,7 @@ const questions = [
     {
         question: 'Which country does this flag belong to?',
         alt: 'An image of a building for the question "Which country does this flag belong to"',
-        image: 'images/for_ques23.webp',
+        image: 'images/for_ques23.jpg',
         answers: [
             { text: 'Nepal', correct: false },
             { text: 'Uganda', correct: true },

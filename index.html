@@ -3,23 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive quiz application with multiple choice questions and images.">
+    <meta name="keywords" content="quiz, multiple choice, questions, images">
+    <meta name="author" content="Polina">
     <link rel="stylesheet" href="style.css">
     <title>Quiz</title>
 </head>
 <body>
     <div id="quiz">
-        <h1>Quiz</h1>
+        <div id="question-counter"><h1>Welcome to Quiz</h1></div>
+        
         <div id="question-container" class="hide">
-            <div id="question">Welcome to Quiz</div>
-            <img id="question-image" src="">
-            <div id="answer-buttons" class="btn-grid">
-                <!-- Кнопки ответа будут добавлены сюда динамически -->
-            </div>
-            
+            <div id="question"></div>
+            <img id="question-image" src="" alt="Question Image" class="hide">
+            <div id="answer-buttons" class="btn-grid"></div>
         </div>
         <div id="controls">
-            <div id="question-counter" class="hide">Questions answered: 0</div>
-            <button id="start-btn">Start Quiz</button>
             <button id="next-btn" class="hide">Next question</button>
             <button id="check-btn" class="hide">Check</button>
             <div id="results" class="hide"></div>
