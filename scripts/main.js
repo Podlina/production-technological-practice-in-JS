@@ -9,16 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionImageElement = document.getElementById('question-image'); // Ссылка на элемент изображения
 
     let shuffledQuestions, currentQuestionIndex, score = 0;
+    let startTime, endTime;
 
-    startGame(); 
+    startGame();
 
     function startGame() {
-        questionCounterElement.classList.remove('hide'); 
-        questionContainerElement.classList.remove('hide'); 
+        questionCounterElement.classList.remove('hide');
+        questionContainerElement.classList.remove('hide');
         
         shuffledQuestions = getRandomQuestions(questions, 10);
         currentQuestionIndex = 0;
         score = 0;
+
+        startTime = new Date();
 
         setNextQuestion();
     }
@@ -43,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (question.image) {
             questionImageElement.src = question.image;
-            questionImageElement.alt = question.alt || ''; 
+            questionImageElement.alt = question.alt || '';
             questionImageElement.classList.remove('hide');
         } else {
             questionImageElement.classList.add('hide');
@@ -149,6 +152,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function concludeQuiz() {
+        endTime = new Date();
+        const timeTaken = Math.floor((endTime - startTime) / 1000); // Time in seconds
+        const minutes = Math.floor(timeTaken / 60);
+        const seconds = timeTaken % 60;
+
         questionContainerElement.classList.add('hide');
         nextButton.classList.add('hide');
         checkButton.classList.add('hide');
@@ -157,12 +165,13 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsElement.innerHTML = `
             <h2>Quiz Completed!</h2>
             <p>Your score: ${score} out of ${shuffledQuestions.length}</p>
+            <p>Time taken: ${minutes}:${seconds} </p>
             <button id="restart-btn">Restart Quiz</button>
         `;
         document.getElementById('restart-btn').addEventListener('click', () => {
             resultsElement.classList.add('hide');
             startGame();
         });
-        questionElement.innerText = ''; 
+        questionElement.innerText = '';
     }
 });
