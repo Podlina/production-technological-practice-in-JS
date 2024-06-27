@@ -1,0 +1,68 @@
+:root {
+    --min-height-body: 100vh;
+    --margin-body: 0;
+    --padding-body: 0;
+    --background-color-body: linear-gradient(pink, rgb(0, 183, 255));
+    --transition-body: background 0.5s;
+
+    --width-quiz: 90%;
+    --max-width-quiz: 600px;
+    --margin-quiz: 20px;
+    --padding-quiz: 20px;
+    --background-color-quiz: azure;
+    --border-radius-quiz: 15px;
+    --box-shadow-quiz: 0 8px 16px rgba(249, 247, 247, 0.591);
+    --transition-quiz: background-color 0.5s;
+
+    --width-question-container: 100%;
+
+    --font-size-question: 24px;
+    --margin-bottom-question: 10px;
+
+    --max-width-question-image: 300px;
+    --height-question-image: auto;
+    --margin-top-question-image: 10px;
+    --margin-question-image: 20px 0;
+
+    --gap-answer-buttons: 10px;
+
+    --padding-btn: 10px 15px;
+    --background-color-btn: rgb(199, 156, 242);
+    --color-btn:  rgb(111, 247, 254);
+    --border-radius-btn: 5px;
+    --transition-btn: background-color 0.3s;
+
+    --margin-top-controls: 20px;
+
+    --background-color-btn-hover: rgb(255, 242, 141);
+
+    --padding-btns: 10px 20px;
+    --background-color-btns: rgb(141, 249, 144);
+    --color-btns: white;
+
+    --background-color-wrong: rgb(244, 162, 156);
+
+    --background-color-multiple-choice-selected: rgb(157, 176, 242);
+    --border-color-multiple-choice-selected: rgb(184, 254, 255);
+
+    --top-theme-toggle: 20px;
+    --right-theme-toggle: 20px;
+
+    --font-size-1-media-question: 22px;
+    --font-size-2-media-question: 20px;
+    --font-size-3-media-question: 18px;
+
+    --max-width-1-media-question-image: 250px;
+    --max-width-2-media-question-image: 200px;
+    --max-width-3-media-question-image: 150px;
+
+    --padding-1-media-btn: 8px 12px;
+    --padding-2-media-btn: 6px 10px;
+    --padding-3-media-btn: 5px 8px;
+
+    --padding-1-media-btns: 8px 16px;
+    --padding-2-media-btns: 6px 12px;
+    --padding-3-media-btns: 5px 10px;
+
+    --grid-template-columns-media-answer-buttons: 1fr;
+}

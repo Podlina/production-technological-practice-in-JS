@@ -1,80 +1,61 @@
-:root {
-    --background-color-1: linear-gradient(pink, rgb(0, 183, 255));
-    --background-color-2: azure;
-    --background-color-green: rgb(76, 175, 80);
-
-    --color-wh: white;
-
-    --border-radius: 15px;
-    --border-radius-btn: 5px;
-    --border-n: none;
-
-    --cursor: pointer;
-    --padding-btn: 10px 20px;
-    --margin-top: 20px;
-    --justify: center;
-
-    --display-fx: flex;
-    --box-shadow: 0 8px 16px rgba(249, 247, 247, 0.591);
-
-    --align-items: center;
- 
-}
 
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    display: var(--display-fx);
+    display: flex;
     justify-content: center;
-    align-items: var(--align-items);
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background: var(--background-color-1);
+    align-items: center;
+    min-height: var(--min-height-body);
+    margin: var(--margin-body);
+    padding: var(--padding-body);
+    background: var(--background-color-body);
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    transition: var(--transition-body);
 }
 
 #quiz {
-    width: 90%;
-    max-width: 600px;
-    margin: 20px;
-    padding: 20px;
-    background-color: var(--background-color-2);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    display: var(--display-fx);
+    width: var(--width-quiz);
+    max-width: var(--max-width-quiz);
+    margin: var(--margin-quiz);
+    padding: var(--padding-quiz);
+    background-color: var(--background-color-quiz);
+    border-radius: var(--border-radius-quiz);
+    box-shadow: var(--box-shadow-quiz);
+    display: flex;
     flex-direction: column;
-    align-items: var(--align-items);
+    align-items: center;
     text-align: center;
+    transition: var(--transition-quiz);
 }
 
 #question-container {
-    width: 100%;
-    max-width: 600px;
-    margin: 20px;
-    padding: 20px;
-    background-color: var(--background-color-2);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    display: var(--display-fx);
+    width: var(--width-question-container);
+    max-width: var(--max-width-quiz);
+    margin: var(--margin-quiz);
+    padding: var(--padding-quiz);
+    background-color: var(--background-color-quiz);
+    border-radius: var(--border-radius-quiz);
+    box-shadow: var(--box-shadow-quiz);
+    display: flex;
     flex-direction: column;
-    align-items: var(--align-items);
+    align-items: center;
     text-align: center;
+    transition: var(transition-quiz);
 }
 
 #question {
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: var(--font-size-question);
+    margin-bottom: var(--margin-bottom-question);
     text-align: center;
 }
 
 #question-image {
-    max-width: 300px;
-    height: auto;
-    margin-top: 10px;
-    margin: 20px 0;
-    border-radius: var(--border-radius);
+    max-width: var(--max-width-question-image);
+    height: var(--max-width-question-image);
+    margin-top: var(--margin-top-question-image);
+    margin: var(--margin-question-image);
+    border-radius: var(--border-radius-quiz);
 }
 
 .hide {
@@ -84,31 +65,32 @@ body {
 #answer-buttons {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: var(--gap-answer-buttons);
     justify-content: center;
-    width: 100%;
+    width: var(--width-question-container);
 }
 
 .btn {
-    padding: 10px 15px;
-    background-color: rgb(174, 130, 215);
-    color: rgb(139, 227, 232);
-    border: var(--border-n);
+    padding: var(--padding-btn);
+    background-color: var(--background-color-btn);
+    color: var(--color-btn);
+    border: none;
     border-radius: var(--border-radius-btn);
-    cursor: var(--cursor);
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: var(--transition-btn);
     text-align: center;
 }
 
 .btn:hover {
-    background-color: rgb(252, 196, 128);
+    background-color: var(background-color-btn-hover);
 }
 
+
 #controls {
-    display: var(--display-fx);
-    justify-content: var(--justify);
-    margin-top: var(--margin-top);
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: var(--margin-top-controls);
+    width: var(--width-question-container);
 }
 
 #controls .hide {
@@ -116,112 +98,126 @@ body {
 }
 
 #next-btn, #restart-btn {
-    padding: var(--padding-btn);
-    background-color: var(--background-color-green);
-    color: var(--color-wh);
-    border: var(--border-n);
+    padding: var(--padding-btns);
+    background-color: var(--background-color-btns);
+    color: var(--color-btns);
+    border: none;
     border-radius: var(--border-radius-btn);
-    cursor: var(--cursor);
+    cursor: pointer;
     text-align: center;
 }
 
 #next-btn:hover, #restart-btn:hover {
-    background-color: var(--background-color-green);
+    background-color: var(--background-color-btns);
 }
 
 .correct {
-    background-color: var(--background-color-green);
-    color: var(--color-wh);
+    background-color: var(--background-color-btns);
+    color: var(--color-btns);
 }
 
 .wrong {
-    background-color: rgb(251, 125, 116);
-    color: var(--color-wh);
+    background-color: var(--background-color-wrong);
+    color: var(--color-btns);
 }
 
 .multiple-choice.selected {
-    background-color: #cce5ff;
-    border-color: #b8daff;
+    background-color: var(--background-color-multiple-choice-selected);
+    border-color: var(--border-color-multiple-choice-selected);
 }
 
 #check-btn {
-    padding: var(--padding-btn);
-    margin-top: var(--margin-top);
-    background-color: var(--background-color-green);
-    color: var(--color-wh);
-    border: var(--border-n);
+    padding: var(--padding-btns);
+    margin-top: var(--margin-top-controls);
+    background-color: var(--background-color-btns);
+    color: var(--color-btns);
+    border: none;
     border-radius: var(--border-radius-btn);
-    cursor: var(--cursor);
-    transition: background-color 0.3s;
+    cursor: pointer;
+    transition: var(transition-btn);
     text-align: center;
 }
 
+#theme-toggle {
+    position: absolute;
+    top: var(--top-theme-toggle);
+    right: var(--right-theme-toggle);
+    background-color: var(--background-color-btns);
+    color: var(--color-btns);
+    border: none;
+    border-radius: var(--border-radius-btn);
+    cursor: pointer;
+    padding: var(--padding-btns);
+    transition: var(transition-btn);
+}
+
+
 @media (max-width: 1200px) {
     #question {
-        font-size: 22px;
+        font-size: var(--font-size-1-media-question);
     }
 
     .question-image {
-        max-width: 250px;
+        max-width: var(--max-width-1-media-question-image);
     }
 
     .btn {
-        padding: 8px 12px;
+        padding: var(--padding-1-media-btn);
     }
 
     #next-btn, #restart-btn {
-        padding: 8px 16px;
+        padding: var(--padding-1-media-btns);
     }
 
     #check-btn {
-        padding: 8px 16px;
+        padding: var(--padding-1-media-btns);
     }
 }
 
 @media (max-width: 768px) {
     #question {
-        font-size: 20px;
+        font-size: var(--font-size-2-media-question);
     }
 
     .question-image {
-        max-width: 200px;
+        max-width: var(--max-width-2-media-question-image);
     }
 
     .btn {
-        padding: 6px 10px;
+        padding: var(--padding-2-media-btn);
     }
 
     #next-btn, #restart-btn {
-        padding: 6px 12px;
+        padding: var(--padding-2-media-btns);
     }
 
     #check-btn {
-        padding: 6px 12px;
+        padding: var(--padding-2-media-btns);
     }
 
     #answer-buttons {
-        grid-template-columns: 1fr;
+        grid-template-columns: var(--grid-template-columns-media-answer-buttons);
     }
 }
 
 @media (max-width: 480px) {
     #question {
-        font-size: 18px;
+        font-size: var(--font-size-3-media-question);
     }
 
     .question-image {
-        max-width: 150px;
+        max-width: var(--max-width-3-media-question-image);
     }
 
     .btn {
-        padding: 5px 8px;
+        padding: var(--padding-3-media-btn);
     }
 
     #next-btn, #restart-btn {
-        padding: 5px 10px;
+        padding: var(--padding-3-media-btns);
     }
 
     #check-btn {
-        padding: 5px 10px;
+        padding: var(--padding-3-media-btns);
     }
 }
