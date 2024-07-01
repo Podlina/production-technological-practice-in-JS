@@ -6,10 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionContainerElement = document.getElementById('question-container');
     const questionElement = document.getElementById('question');
     const answerButtonsElement = document.getElementById('answer-buttons');
-    const questionImageElement = document.getElementById('question-image'); // Ссылка на элемент изображения
+    const questionImageElement = document.getElementById('question-image'); 
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const body = document.body;
 
     let shuffledQuestions, currentQuestionIndex, score = 0;
     let startTime, endTime;
+
+    themeToggleButton.addEventListener('click', () => {
+        body.classList.toggle('dark-theme'); 
+    });
 
     startGame();
 
@@ -153,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function concludeQuiz() {
         endTime = new Date();
-        const timeTaken = Math.floor((endTime - startTime) / 1000); // Time in seconds
+        const timeTaken = Math.floor((endTime - startTime) / 1000); 
         const minutes = Math.floor(timeTaken / 60);
         const seconds = timeTaken % 60;
 

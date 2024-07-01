@@ -1,7 +1,5 @@
 :root {
     --min-height-body: 100vh;
-    --margin-body: 0;
-    --padding-body: 0;
     --background-color-body: linear-gradient(pink, rgb(0, 183, 255));
     --transition-body: background 0.5s;
 
@@ -34,7 +32,7 @@
 
     --margin-top-controls: 20px;
 
-    --background-color-btn-hover: rgb(255, 242, 141);
+    --background-color-btn-hover: rgba(255, 242, 141, 0.576);
 
     --padding-btns: 10px 20px;
     --background-color-btns: rgb(141, 249, 144);
@@ -65,4 +63,11 @@
     --padding-3-media-btns: 5px 10px;
 
     --grid-template-columns-media-answer-buttons: 1fr;
+}
+
+.dark-theme {
+    --background-color-body: linear-gradient( rgb(0, 0, 0), rgb(25, 43, 97));
+    --text-color-body: #fffefe;
+    --background-color-quiz:  rgb(26, 25, 25);
+    --box-shadow-quiz: 0 16px 16px rgba(54, 54, 54, 0.911);
 }
