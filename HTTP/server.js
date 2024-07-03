@@ -2,11 +2,9 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 
-// Замените YOUR_API_KEY на ваш реальный API ключ
 const API_KEY = '8b8d7e4ec026a8238a6fc168e39bdcf7';
 const API_URL = `http://api.openweathermap.org/data/2.5/weather?q=London&appid=${API_KEY}`;
 
-// Роут для получения статуса 200
 app.get('/statuses/200', async (req, res) => {
     try {
         const response = await axios.get(API_URL);
@@ -14,11 +12,6 @@ app.get('/statuses/200', async (req, res) => {
     } catch (error) {
         res.status(500).send('Internal Server Error');
     }
-});
-
-
-app.get('/statuses/100', (req, res) => {
-    res.status(100).send('Continue');
 });
 
 app.get('/statuses/300', (req, res) => {
