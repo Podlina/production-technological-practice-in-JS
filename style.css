@@ -17,8 +17,8 @@ body {
 #quiz {
     width: var(--width-quiz);
     max-width: var(--max-width-quiz);
-    margin: var(--margin-quiz);
-    padding: var(--padding-quiz);
+    margin: var(--margin-padding-quiz);
+    padding: var(--margin-padding-quiz);
     background-color: var(--background-color-quiz); 
     color: var(--text-color-body);  
     border-radius: var(--border-radius-quiz);
@@ -37,8 +37,8 @@ body {
 #question-container {
     width: var(--width-question-container);
     max-width: var(--max-width-quiz);
-    margin: var(--margin-quiz);
-    padding: var(--padding-quiz);
+    margin: var(--margin-padding-quiz);
+    padding: var(--margin-padding-quiz);
     background-color: var(--background-color-quiz); 
     color: var(--text-color-body); 
     border-radius: var(--border-radius-quiz);
@@ -55,14 +55,14 @@ body {
 
 #question {
     font-size: var(--font-size-question);
-    margin-bottom: var(--margin-bottom-question);
+    margin-bottom: var(--margin-10);
     text-align: center;
 }
 
 #question-image {
     max-width: var(--max-width-question-image);
     height: var(--max-width-question-image);
-    margin-top: var(--margin-top-question-image);
+    margin-top: var(--margin-10);
     margin: var(--margin-question-image);
     border-radius: var(--border-radius-quiz);
 }
@@ -97,7 +97,7 @@ body {
 #controls {
     display: flex;
     justify-content: center;
-    margin-top: var(--margin-top-controls);
+    margin-top: var(--margin-padding-quiz);
     width: var(--width-question-container);
 }
 
